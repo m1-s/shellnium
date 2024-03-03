@@ -18,6 +18,7 @@ new_session() {
   $POST -d '{
     "desiredCapabilities": {
       "browserName":"chrome",
+      "goog:loggingPrefs":{"browser": "ALL"},
       "chromeOptions": {"args": ['${chromeOptions}'] }
     }
   }' ${ROOT}/session | jq -r '.sessionId'
